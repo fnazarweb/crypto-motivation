@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto motivation</title>
+    <style>
+      body {
+        height: 100vh;
+        background-image: linear-gradient(#151515, #300082 155%);
+        color: white;
+        font-family: system-ui;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .content-generator,
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 300px;
+      }
+
+      textarea,
+      button,
+      input {
+        padding: 0.75rem;
+        background-color: #333;
+        border: 1px solid #555;
+        border-radius: 4px;
+        resize: none;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #3a3a3a;
+      }
+
+      #widget {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #4300a0;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 8px;
+      }
+      #currency_status {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .connected {
+        color: lightgreen;
+      }
+      .disconnected {
+        color: red;
+      }
+      .connecting {
+        color: yellow;
+      }
+      #price {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 5px;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="widget">
+      <div id="currency_status" class="disconnected">🔴Disconnected</div>
+      <p>
+        BTC/USDT: <span id="price">-</span>
+        <span id="trend" class="disconnected">-</span>
+      </p>
+      <button onclick="connect()">Reconnect</button>
+    </div>
+
+    <section id="main">
+      <div class="content-generator">
+        <h1>MOTIVATE ME</h1>
+        <button id="generate">Generate post</button>
+        <textarea
+          id="post"
+          rows="6"
+          placeholder="Your generated post will appear here..."
+        ></textarea>
+        <button id="save">Save to Google Sheets</button>
+        <p id="status"></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>All-in-one place to learn code</p>
+      <img src="./logo.svg" />
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
