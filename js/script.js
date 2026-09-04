@@ -23,15 +23,18 @@ document.getElementById("save").addEventListener("click", async () => {
 
   status.textContent = "Saving post...";
   try {
-    await new Promise((resolve, reject) => {
-      setTimeout(resolve, 1500); //Simulate network timeout
-    });
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbwjzfKa7wmM2S9PJGUqYEKtfoS32mhRZmxGSQLbbHS9JOptt0LQc7GM6Ev-9YhyL8_S/exec",
+      {
+        method: "POST",
+        body: JSON.stringify({ post: postContent, secret: "goodbye-spammer" }),
+      },
+    );
     document.getElementById("post").value = "";
     status.textContent = "Post saved!";
   } catch (e) {
     status.textContent = "Error saving post";
     console.error("Error saving post", e.message);
-    return;
   }
 });
 

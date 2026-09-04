@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.46.0/tabler-icons.min.css"
+    />
     <title>Crypto motivation</title>
     <style>
       body {
@@ -74,6 +78,24 @@
         padding: 1rem;
         text-align: center;
       }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .footer-brand .ti {
+        font-size: 20px;
+        color: #f7931a;
+      }
+
+      .footer-brand p {
+        margin: 0;
+        font-size: 0.85rem;
+        opacity: 0.8;
+      }
     </style>
   </head>
   <body>
@@ -101,10 +123,11 @@
     </section>
 
     <footer>
-      <p>All-in-one place to learn code</p>
-      <img src="./logo.svg" />
+      <div class="footer-brand">
+        <i class="ti ti-currency-bitcoin"></i>
+        <p>Live BTC price · Random motivation</p>
+      </div>
     </footer>
-
     <script src="./js/script.js"></script>
   </body>
 </html>
